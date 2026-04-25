@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FlexiFunds Perfumes</title>
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#0a0a0a; color:#fff; }
-    header { padding:20px; text-align:center; background:#000; border-bottom:1px solid gold; }
-    header h1 { color:gold; margin:0; }
-    .hero { text-align:center; padding:60px 20px; }
-    .hero h2 { font-size:32px; margin-bottom:10px; }
-    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:40px; }
-    .card { background:#111; border:1px solid gold; border-radius:16px; padding:20px; text-align:center; }
-    .card h3 { color:gold; }
-    .price { font-size:20px; margin:10px 0; }
-    button { background:gold; border:none; padding:10px 20px; border-radius:10px; cursor:pointer; }
-    .whatsapp { display:block; margin:20px auto; text-align:center; }
-    footer { text-align:center; padding:20px; border-top:1px solid gold; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexiFunds Perfumes</title>
+
+<style>
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #000, #111);
+  color:#fff;
+}
+
+/* HEADER */
+header {
+  padding:25px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,215,0,0.3);
+}
+header h1 {
+  color:gold;
+  font-size:28px;
+  letter-spacing:2px;
+}
+
+/* HERO */
+.hero {
+  text-align:center;
+  padding:70px 20px;
+}
+.hero h2 {
+  font-size:36px;
+  background:linear-gradient(to right, gold, #fff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p {
+  opacity:0.8;
+}
+
+/* PRODUCTS GRID */
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  padding:40px;
+}
+
+/* PREMIUM CARD */
+.card {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,215,0,0.3);
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 10px 25px rgba(255,215,0,0.2);
+}
+
+.card h3 { color:gold; }
+.price { font-size:20px; margin:10px 0; }
+
+/* BUTTON */
+button {
+  background:linear-gradient(to right, gold, orange);
+  border:none;
+  padding:12px 25px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+button:hover {
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  padding:50px 20px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:20px;
+  border-top:1px solid rgba(255,215,0,0.3);
+  opacity:0.7;
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -28,10 +107,19 @@
 
 <section class="hero">
   <h2>Smell Expensive. Pay Smart.</h2>
-  <p>Premium scents at affordable prices.</p>
+  <p>Premium scents that define your presence.</p>
+</section>
+
+<section>
+  <h2 style="color:gold;">About Us</h2>
+  <p style="max-width:600px; margin:auto;">
+    FlexiFunds is a luxury fragrance brand founded by Andrew Kakoma.
+    We deliver long-lasting premium scents designed for confidence and identity.
+  </p>
 </section>
 
 <section class="products">
+
   <div class="card">
     <h3>Classic Oud</h3>
     <p class="price">K125</p>
@@ -49,11 +137,20 @@
     <p class="price">K125</p>
     <button onclick="orderWhatsApp('Fresh Breeze')">Order</button>
   </div>
+
 </section>
 
-<div class="whatsapp">
+<section>
+  <h2 style="color:gold;">Why Choose FlexiFunds?</h2>
+  <p>✔ Premium long-lasting fragrances</p>
+  <p>✔ Affordable luxury pricing</p>
+  <p>✔ Fast delivery in Lusaka</p>
+</section>
+
+<section>
+  <h3 style="color:gold;">Order Now</h3>
   <button onclick="contactWhatsApp()">Chat on WhatsApp</button>
-</div>
+</section>
 
 <footer>
   <p>CEO: Andrew Kakoma</p>
@@ -63,12 +160,12 @@
 <script>
 function orderWhatsApp(product) {
   const number = "260 979194796";
-  const message = "Hello, I want to order " + product;
+  const message = "Hello, I would like to buy from FlexiFunds... " + product;
   window.open("https://wa.me/" + number + "?text=" + encodeURIComponent(message), "_blank");
 }
 
 function contactWhatsApp() {
-  const number = "26097XXXXXXX";
+  const number = "260 979194796";
   window.open("https://wa.me/" + number, "_blank");
 }
 </script>
